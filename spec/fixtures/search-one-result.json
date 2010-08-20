@@ -1,0 +1,39 @@
+{
+    "resultCount":1,
+    "results":
+    [
+        {
+            "artistId":6483093,
+            "artistName":"The Killers",
+            "artistViewUrl":"http://itunes.apple.com/us/artist/the-killers/id6483093?uo=4",
+            "artworkUrl100":"http://a1.phobos.apple.com/us/r1000/056/Music/y2004/m05/d27/h11/s05.bgvgwgjx.100x100-75.jpg",
+            "artworkUrl30":"http://a1.phobos.apple.com/us/r1000/056/Music/y2004/m05/d27/h11/s05.bgvgwgjx.30x30-50.jpg",
+            "artworkUrl60":"http://a1.phobos.apple.com/us/r1000/056/Music/y2004/m05/d27/h11/s05.bgvgwgjx.60x60-50.jpg",
+            "collectionCensoredName":"Hot Fuss",
+            "collectionExplicitness":"notExplicit",
+            "collectionId":14268749,
+            "collectionName":"Hot Fuss",
+            "collectionPrice":7.99,
+            "collectionViewUrl":"http://itunes.apple.com/us/album/mr-brightside/id14268749?i=14268729&uo=4",
+            "contentAdvisoryRating":null,
+            "country":"USA",
+            "currency":"USD",
+            "discCount":1,
+            "discNumber":1,
+            "kind":"song",
+            "previewUrl":"http://a1.phobos.apple.com/us/r1000/048/Music/5c/c4/58/mzm.emdubbpj.aac.p.m4a",
+            "primaryGenreName":"Alternative",
+            "releaseDate":"2004-06-15 07:00:00 Etc/GMT",
+            "trackCensoredName":"Mr. Brightside",
+            "trackCount":11,
+            "trackExplicitness":"notExplicit",
+            "trackId":14268729,
+            "trackName":"Mr. Brightside",
+            "trackNumber":2,
+            "trackPrice":1.29,
+            "trackTimeMillis":222587,
+            "trackViewUrl":"http://itunes.apple.com/us/album/mr-brightside/id14268749?i=14268729&uo=4",
+            "wrapperType":"track"
+        }
+    ]
+}

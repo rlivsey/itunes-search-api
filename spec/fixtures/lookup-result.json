@@ -1,0 +1,17 @@
+{
+    "resultCount":1,
+    "results":
+    [
+        {
+            "amgArtistId":468749,
+            "amgVideoArtistId":null,
+            "artistId":909253,
+            "artistLinkUrl":"http://itunes.apple.com/us/artist/jack-johnson/id909253?uo=4",
+            "artistName":"Jack Johnson",
+            "artistType":"Artist",
+            "primaryGenreId":21,
+            "primaryGenreName":"Rock",
+            "wrapperType":"artist"
+        }
+    ]
+}
