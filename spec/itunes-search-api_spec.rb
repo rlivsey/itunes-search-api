@@ -1,12 +1,12 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require_relative 'spec_helper'
 
-API_URL    = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa"
-SEARCH_URL = "#{API_URL}/wsSearch"
-LOOKUP_URL = "#{API_URL}/wsLookup"
+API_URL    = "https://itunes.apple.com"
+SEARCH_URL = "#{API_URL}/search"
+LOOKUP_URL = "#{API_URL}/lookup"
 
 describe ITunesSearchAPI do
   describe ".search" do
-    it "should perform a GET request to /wsSearch with the parameters passed" do
+    it "should perform a GET request to /search with the parameters passed" do
       stub_request(:get, /#{SEARCH_URL}.*/)
       ITunesSearchAPI.search(:term => "The Killers")
       WebMock.should have_requested(:get, SEARCH_URL).with(:query => {:term => "The Killers"})
@@ -19,17 +19,17 @@ describe ITunesSearchAPI do
 
     it "should return an array containing one result if the search returns one result" do
       stub_request(:get, SEARCH_URL).with(:query => {:term => "The Killers"}).to_return(:body => fixture("search-one-result.json"))
-      ITunesSearchAPI.search(:term => "The Killers").size.should == 1
+			ITunesSearchAPI.search(:term => "The Killers").size.should == 1
     end
 
-    it "should return containing all the results if the search returns many results" do
+    it "should return an array containing all the results if the search returns multiple results" do
       stub_request(:get, SEARCH_URL).with(:query => {:term => "The Killers"}).to_return(:body => fixture("search-many-results.json"))
-      ITunesSearchAPI.search(:term => "The Killers").size.should == 50
+      ITunesSearchAPI.search(:term => "The Killers").size.should == 2
     end
   end
 
   describe ".lookup" do
-    it "should perform a GET request to /wsLookup with the parameters passed" do
+    it "should perform a GET request to /lookup with the parameters passed" do
       stub_request(:get, /#{LOOKUP_URL}.*/)
       ITunesSearchAPI.lookup(:id => "284910350")
       WebMock.should have_requested(:get, LOOKUP_URL).with(:query => {:id => "284910350"})

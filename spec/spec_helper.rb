@@ -1,12 +1,11 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require 'rubygems'
-require 'spec'
 require 'webmock/rspec'
 require 'itunes-search-api'
+require 'ruby-debug'
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   config.include(WebMock)
 end
 
