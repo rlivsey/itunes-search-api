@@ -37,13 +37,14 @@ describe ITunesSearchAPI do
 
     it "should return nil if the lookup returns no results" do
       stub_request(:get, LOOKUP_URL).with(:query => {:id => "284910350"}).to_return(:body => fixture("lookup-no-results.json"))
-      ITunesSearchAPI.lookup(:id => "284910350").should be_nil
+      ITunesSearchAPI.lookup(:id => "284910350").should be_empty
     end
 
     it "should return the result if the lookup returns a result" do
       stub_request(:get, LOOKUP_URL).with(:query => {:id => "284910350"}).to_return(:body => fixture("lookup-result.json"))
       result = ITunesSearchAPI.lookup(:id => "284910350")
-      result["artistName"].should == "Jack Johnson"
+      result.class.should eq(Array)
+      result.first["artistName"].should == "Jack Johnson"
     end
   end
 end
