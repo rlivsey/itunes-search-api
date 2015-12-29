@@ -7,7 +7,7 @@ LOOKUP_URL = "#{API_URL}/lookup"
 describe ITunesSearchAPI do
   describe ".search" do
     it "should perform a GET request to /search with the parameters passed" do
-      stub_request(:get, /#{SEARCH_URL}.*/)
+      stub_request(:get, /#{SEARCH_URL}.*/).to_return(:body => fixture("search-no-results.json"))
       ITunesSearchAPI.search(:term => "The Killers")
       WebMock.should have_requested(:get, SEARCH_URL).with(:query => {:term => "The Killers"})
     end
@@ -30,7 +30,7 @@ describe ITunesSearchAPI do
 
   describe ".lookup" do
     it "should perform a GET request to /lookup with the parameters passed" do
-      stub_request(:get, /#{LOOKUP_URL}.*/)
+      stub_request(:get, /#{LOOKUP_URL}.*/).to_return(:body => fixture("lookup-no-results.json"))
       ITunesSearchAPI.lookup(:id => "284910350")
       WebMock.should have_requested(:get, LOOKUP_URL).with(:query => {:id => "284910350"})
     end

@@ -1,17 +1,13 @@
-require 'httparty'
+require 'httpclient'
 
 class ITunesSearchAPI
-  include HTTParty
-  base_uri 'https://itunes.apple.com'
-  format :json
-
   class << self
     def search(query={})
-      get("/search", :query => query)["results"]
+      JSON.parse(HTTPClient.new.get("https://itunes.apple.com/search", :query => query).body)["results"]
     end
 
     def lookup(query={})
-      get("/lookup", :query => query)["results"]
+      JSON.parse(HTTPClient.new.get("https://itunes.apple.com/lookup", :query => query).body)["results"]
     end
   end
 end
